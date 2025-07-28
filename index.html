@@ -1,30 +1,46 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>LOGIN REGISTER Page</title>
-    <link rel="stylesheet" href="./style.css">
-    <link href='https://cdn.boxicons.com/fonts/basic/boxicons.min.css' rel='stylesheet'>
+    <link rel="stylesheet" href="style.css" />
+    <link href="https://cdn.jsdelivr.net/npm/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet" />
 </head>
+
 <body>
     <header>
-        <a href="#" class="logo" >Logo</a>
-
+        <a href="#" class="logo">Logo</a>
         <nav>
             <a href="#">Home</a>
             <a href="#">About</a>
             <a href="#">Collection</a>
             <a href="#">Contact</a>
         </nav>
-
         <div class="user-auth">
-            <button type="button" class="login-btn-modal">Login</button>
+            <div class="profile-box">
+                <div class="avatar-circle" style="display: none;">C</div>
+                    <div class="dropdown">
+                        <a href="#">My Account</a>
+                        <a href="#">Logout</a>
+                    </div>
+            </div>
+
+            <button type="button" class="login-btn-modal" >Login</button>
         </div>
     </header>
 
+    <div class="alert-box">
+        <div class="alert success">
+            <i class="bx bxs-check-cirlce"></i>
+            <span>Registration Successful</span>
+        </div>
+
+    </div>
+
     <section>
-        <h1>Hey Developer !</h1>
+        <h1>Hey Developer!</h1>
     </section>
 
     <div class="auth-modal">
@@ -32,48 +48,42 @@
 
         <div class="form-box login">
             <h2>Login</h2>
-            <form action="">
+            <form>
                 <div class="input-box">
-                    <input type="email" name="email" placeholder="Email" required>
-                    <i class='bx  bxs-envelope'  ></i> 
+                    <input type="email" placeholder="Email" required />
+                    <i class='bx bxs-envelope'></i>
                 </div>
-                
                 <div class="input-box">
-                    <input type="password" name="password" placeholder="Password" required>
-                    <i class='bx  bxs-lock-keyhole'  ></i> 
+                    <input type="password" placeholder="Password" required />
+                    <i class='bx bxs-lock-alt'></i>
                 </div>
-                <button type="submit" name="login-btn" class="btn" >Login</button>
-                <p>Don't have an account <a href="#" class="register-link">Register</a></p>
+                <button type="submit" class="btn">Login</button>
+                <p>Don't have an account? <a href="#" class="register-link">Register</a></p>
             </form>
         </div>
 
         <div class="form-box register">
             <h2>Register</h2>
-            <form action="">
+            <form>
                 <div class="input-box">
-                    <input type="text" name="name" placeholder="Name" required>
-                    <i class='bx  bxs-user'  ></i> 
+                    <input type="text" placeholder="Name" required />
+                    <i class='bx bxs-user'></i>
                 </div>
-                
                 <div class="input-box">
-                    <input type="email" name="email" placeholder="Email" required>
-                    <i class='bx  bxs-envelope'  ></i> 
+                    <input type="email" placeholder="Email" required />
+                    <i class='bx bxs-envelope'></i>
                 </div>
-
                 <div class="input-box">
-                    <input type="password" name="password" placeholder="Password" required>
-                    <i class='bx  bxs-lock-keyhole'  ></i> 
+                    <input type="password" placeholder="Password" required />
+                    <i class='bx bxs-lock-alt'></i>
                 </div>
-                
-                <button type="submit" name="register-btn" class="btn">Register</button>
+                <button type="submit" class="btn">Register</button>
                 <p>Already have an account? <a href="#" class="login-link">Login</a></p>
             </form>
         </div>
-
-
     </div>
 
-    <script src="./script.js"></script>
-      
+    <script src="script.js"></script>
 </body>
+
 </html>

@@ -46,20 +46,20 @@ nav a{
     border: 2px solid #222;
     border-radius: 40px;
     font-size: 16px;
-        color: #ffff;
+    color: #ffff;
     font-weight: 500;
     cursor:pointer;
     transition: .5s;
 }
 
-.user-auth .login-btn-modal :hover{
+.user-auth .login-btn-modal:hover{
 background: #ffff;
 color: #222;
 }
 
 section{
     min-height: 100vh;
-    background: url(./illustration-anime-city.jpg) no-repeat;
+    background: url(./illustration-anime-city.jpg) no-repeat ;
     background-size: cover;
     background-position: center;
     padding: 0 100px;
@@ -73,39 +73,65 @@ section h1{
     font-weight:600 ;
 }
 
-.auth-modal{
+/* ...existing code... */
+
+.auth-modal {
     position: fixed;
     width: 420px;
     height: 440px;
-    background:rgba(0, 0, 0, .3) ;
+    background: rgba(0, 0, 0, .3);
     border: 2px solid rgba(225, 225, 225, .3);
     border-radius: 20px;
     box-shadow: 0 0 30px rgba(0, 0, 0, 0.3);
     backdrop-filter: blur(20px);
-    color: #ffff;
+    color: #fff;
     inset: 0;
     margin: auto;
-    margin: flex;
+    display: flex;
     align-items: center;
-    transition: height .2s ease ;
+    overflow: hidden;
+    transform: scale(0);
+    transition: height .2s ease,transform .5s ease;
 }
 
-.auth-modal .form-box.login{
-   reansform: translate(-400px);
-   transition:none;
+.auth-modal.show{
+    transform: scale(1);    
 }
 
-.auth-modal .form-box{
-width: 100%;
-padding: 40px;
-position: relative;
+.auth-modal .form-box {
+    width: 100%;
+    padding: 40px;
+    position: absolute;
+    top: 0;
+    left: 0;
+    transition: transform .18s ease;
 }
 
-.auth-modal .form-box.register{
-    position: realative;
-    transform: none;
+.auth-modal .form-box.login {
+    transform: translateX(0);
+    z-index: 2;
 }
 
+.auth-modal .form-box.register {
+    transform: translateX(400px);
+    z-index: 1;
+}
+
+.auth-modal.slide {
+    height: 520px;
+}
+
+.auth-modal.slide .form-box.login {
+    transform: translateX(-400px);
+    transition: none;
+}
+
+.auth-modal.slide .form-box.register {
+    transform: translateX(0);
+    transition: transform .18s ease;
+}
+
+/* ...existing code... */
 .form-box h2{
     font-size: 35px;
     text-align: center;
@@ -171,7 +197,7 @@ font-size: 20px;
     text-decoration: underline;
 }
 
-.auth-modal .close-btn-modal{
+.close-btn-modal {
     position: absolute;
     top: 0;
     right: 0;
@@ -180,17 +206,69 @@ font-size: 20px;
     background: #fff;
     border: none;
     border-bottom-left-radius: 20px;
-    font-size: 35px;
+    font-size: 30px;
     color: #222;
     cursor: pointer;
-    z-index:1;
+    z-index:10;
 }
 
+.profile-box .avatar-circle {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background: #fff;
+    line-height: 40px;
+    font-size: 20px;
+    text-align: center;
+    font-weight: 600;
+    color: #222;
+    cursor: pointer;
+}
 
+.profile-box .dropdown{
+    position: absolute;
+    top: 85px;
+    right: 100px;
+    padding: 10px;
+    background:#fff ;
+    border-radius: 8px;
+    display: flex;
+    flex-direction: column;
+    transform: translateY(20px);
+    opacity: 0;
+    pointer-events: none;
+    transition: .5s; 
+}
 
+.profile-box.show .dropdown{
+    transform: translateY(0);
+    opacity: 1;
+    pointer-events: auto;
+}
 
+.profile-box .dropdown a{
+    padding: 6px 10px;
+    border-radius: 4px;
+    color: #222;
+    text-decoration: none;
+    font-weight: 500;
+    margin: 2px 0;
+    transition: .2s;
+}
 
-
+.alert-box{
+    position: fixed;
+    inset: 0;
+    top: 35px;
+    margin: 0 auto;
+    width: 350px;
+    height: 70px;
+    background:#fff;
+    border-radius: 8px;
+    padding: 0 15px;
+    z-index: 100;
+    overflow: hidden;
+}
 
 
 
